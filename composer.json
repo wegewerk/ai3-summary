@@ -1,0 +1,27 @@
+{
+    "name": "wegewerk/ai3_summary",
+    "type": "typo3-cms-extension",
+    "description": "Ai3 Summary - Summarize Content for TYPO3 Pages",
+    "homepage": "https://www.wegewerk.com/",
+    "license": [
+        "GPL-2.0-or-later"
+    ],
+    "keywords": [
+        "TYPO3 CMS"
+    ],
+    "require": {
+        "typo3/cms-core": "^13.4.0 | ^14.0",
+        "typo3/cms-fluid-styled-content": "^13.4.0 | ^14.0",
+        "wegewerk/ai3_core": "^0.9.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wegewerk\\Ai3Summary\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "ai3_summary"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Wegewerk\Ai3Summary\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
+
+  Wegewerk\Ai3Summary\Domain\Capabilities\ArticlesummaryCapability:
+    autowire: false
+    arguments:
+      $key: 'articlesummary'
+      $title: 'Article Summary'
+      $endpoint: '@Wegewerk\Ai3Summary\Api\ZakAiSummary'
+    tags:
+      - name: ai3.capability
+
+  Wegewerk\Ai3Summary\Api\ZakAiSummary:
+    arguments:
+      $client: '@Wegewerk\Ai3Core\Api\ZakAiClient'
