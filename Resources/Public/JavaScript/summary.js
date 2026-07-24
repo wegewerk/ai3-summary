@@ -30,11 +30,11 @@ class SummaryApp {
                 this.updateBodytext(data.summary);
                 this.updateAi3Fields(data.type,data.source);
             } else {
-                Notification.error( lll('tx_ai3.pageImprovement.summary.error'), data.error || 'Unknown error');
+                Notification.error( lll('tx_ai3.summary.error'), data.error || 'Unknown error');
             }
         } catch (error) {
             let message= await error.response.json();
-            Notification.error(lll('tx_ai3.pageImprovement.summary.error'), message.error);
+            Notification.error(lll('tx_ai3.summary.error'), message.error);
         } finally {
             this.loading = false;
             this.render();
@@ -85,9 +85,9 @@ class SummaryApp {
         const languageOptions = this.getLanguageOptions();
         const template = html`
             <div class="form-inline">
-                    <button 
-                        type="button" 
-                        class="btn btn-default" 
+                    <button
+                        type="button"
+                        class="btn btn-default"
                         @click="${() => this.generateSummary()}"
                         ?disabled="${this.loading}"
                     >

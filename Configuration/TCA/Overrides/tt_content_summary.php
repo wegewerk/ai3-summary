@@ -35,7 +35,7 @@ $GLOBALS['TCA']['tt_content']['types'][$key] = $GLOBALS['TCA']['tt_content']['ty
     $key,
     'before:bodytext');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content',
-    '--div--;LLL:EXT:ai3_summary/Resources/Private/Language/locallang.xlf:tab.ai3,
+    '--div--;LLL:EXT:ai3_core/Resources/Private/Language/locallang.xlf:tab.ai3,
         tx_ai3_type,
         tx_ai3_source,tx_ai3_raw
 ',
