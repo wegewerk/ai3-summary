@@ -30,17 +30,11 @@ $GLOBALS['TCA']['tt_content']['columns']['tx_ai3_summary_generator'] = [
     ],
 ];
 $GLOBALS['TCA']['tt_content']['types'][$key] = $GLOBALS['TCA']['tt_content']['types']['text'];
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content',
-    'tx_ai3_summary_generator',
-    $key,
-    'before:bodytext');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content',
-    '--div--;LLL:EXT:ai3_core/Resources/Private/Language/locallang.xlf:tab.ai3,
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content','tx_ai3_summary_generator',$key,'before:bodytext');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content', '--div--;LLL:EXT:ai3_core/Resources/Private/Language/locallang_db.xlf:tab.ai3,
         tx_ai3_type,
         tx_ai3_source,tx_ai3_raw
-',
-    $key);
-
+', $key);
 
 $GLOBALS['TCA']['tt_content']['types'][$key]['columnsOverrides']['bodytext'] = [
     'config' => [

@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/)
 
 ## [Unreleased]
+### fix
+- fix missing missing i18n for Ai3-Tab
 
 
 ## [0.9.17] - 2026-07-27
