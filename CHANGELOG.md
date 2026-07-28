@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/)
 ## [Unreleased]
 
 
+## [0.9.19] - 2026-07-28
+### change
+- remove Ai3-Tab
+
 ## [0.9.18] - 2026-07-27
 ### fix
 - fix missing missing i18n for Ai3-Tab
