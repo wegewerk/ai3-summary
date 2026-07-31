@@ -10,7 +10,7 @@ class SummaryApp {
         this.recordUid = container.dataset.recordUid;
         this.api = new Ai3Api();
         this.loading = false;
-        this.language = this.getSelectedLanguage();
+        this.language = this.getLanguageOptions()[0].value;
     }
 
     init() {
@@ -144,7 +144,7 @@ class SummaryApp {
         const selector = `[name="data[tt_content][${this.recordUid}][sys_language_uid]"]`;
         const field = document.querySelector(selector);
         if (!field) {
-            return 0;
+            return this.getLanguageOptions()[0].value;
         } else  {
             return field.value;
         }

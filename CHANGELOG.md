@@ -6,7 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/)
 
 ## [Unreleased]
-
+### fix
+- initially select language 'en'
+- consistent use of "ai3_summary" label
+- change TCA field type to 'none' for custom Fields
 
 ## [0.9.20] - 2026-07-29
 

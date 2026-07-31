@@ -25,7 +25,7 @@ $GLOBALS['TCA']['tt_content']['columns']['tx_ai3_summary_generator'] = [
     'exclude' => true,
     'label'   => 'LLL:EXT:ai3_summary/Resources/Private/Language/locallang.xlf:tx_ai3.summary.generator',
     'config'  => [
-        'type'       => 'user',
+        'type'       => 'none',
         'renderType' => 'ai3SummaryElement',
     ],
 ];

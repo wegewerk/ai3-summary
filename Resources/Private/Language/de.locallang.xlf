@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" target-language="de" original="" datatype="plaintext" date="2026-07-24T12:37:51+02:00">
+	<file source-language="en" target-language="de" original="" datatype="plaintext" date="2026-07-29T10:30:03+02:00">
 		<body>
 			<trans-unit id="tx_ai3.summary.error">
 				<source>An Error occured: %s</source>
@@ -11,8 +11,8 @@
 				<target>Zusammenfassungsgenerator</target>
 			</trans-unit>
 			<trans-unit id="tx_ai3.summary.label_ctype">
-				<source>Page Summary</source>
-				<target>Zusammenfassung des Seiteninhalts</target>
+				<source>Ai3 summary</source>
+				<target>Ai3 summary</target>
 			</trans-unit>
 			<trans-unit id="tx_ai3.summary.label_description">
 				<source>Generates a summary Content Object of all content on the current page</source>
