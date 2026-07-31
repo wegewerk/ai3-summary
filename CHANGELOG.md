@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/)
 - initially select language 'en'
 - consistent use of "ai3_summary" label
 - change TCA field type to 'none' for custom Fields
+- display credits widget next to the generate button
 
 ## [0.9.20] - 2026-07-29
 
