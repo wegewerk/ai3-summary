@@ -2,6 +2,7 @@ import {lll} from "@typo3/core/lit-helper.js";
 import {html, render} from 'lit-html';
 import Ai3Api from './ai3api.js';
 import Notification from "@typo3/backend/notification.js";
+import "@wegewerk/ai3core/creditsElement.js";
 
 class SummaryApp {
     constructor(container) {
@@ -10,10 +11,22 @@ class SummaryApp {
         this.recordUid = container.dataset.recordUid;
         this.api = new Ai3Api();
         this.loading = false;
+        this.creditCost = null;
         this.language = this.getLanguageOptions()[0].value;
     }
 
     init() {
+        this.render();
+        this.fetchCreditCost();
+    }
+
+    async fetchCreditCost() {
+        try {
+            const costs = await this.api.creditCosts();
+            this.creditCost = costs?.summary ?? null;
+        } catch {
+            this.creditCost = null;
+        }
         this.render();
     }
 
@@ -93,7 +106,8 @@ class SummaryApp {
                     >
                         <typo3-backend-icon identifier="ai3-summary-icon" size="small"></typo3-backend-icon>
                         ${this.loading ? lll('tx_ai3.summary.summary.generating') : lll('tx_ai3.summary.summary.button')}
-                    </button>
+                        ${this.creditCost !== null ? ` (${lll('tx_ai3.summary.summary.cost', this.creditCost)})` : ''}
+                    </button><ai3-credits></ai3-credits>
                     ${this.loading ? html`<typo3-backend-spinner size="small"></typo3-backend-spinner>` : ''}
                     <select class="form-select" @change="${(e) => this.language = e.target.value}">
                         ${languageOptions.map(option => html`
@@ -108,12 +122,12 @@ class SummaryApp {
     getLanguageOptions() {
         return [
             {
-                value: 'en',
-                label: 'English'
-            },
-            {
                 value: 'de',
                 label: 'Deutsch'
+            },
+            {
+                value: 'en',
+                label: 'English'
             }
         ]
     }

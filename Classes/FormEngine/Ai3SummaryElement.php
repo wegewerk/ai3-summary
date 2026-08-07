@@ -13,14 +13,12 @@ class Ai3SummaryElement extends AbstractFormElement
     {
         $result = $this->initializeResultArray();
         $result['javaScriptModules'][] = JavaScriptModuleInstruction::create('@wegewerk/Ai3Summary/summary.js');
-        $result['javaScriptModules'][] = JavaScriptModuleInstruction::create('@wegewerk/ai3core/creditsElement.js');
 
         $html = [
             '<div data-ai3="ai3-summary-container"',
             ' data-page-id="' . (int)$this->data['parentPageRow']['uid'] . '"',
             ' data-record-uid="' . $this->data['databaseRow']['uid'] . '"',
             '>',
-            '<ai3-credits></ai3-credits>',
             '<div data-ai3="ai3-summary-app">',
             '  </div>',
             '</div>'

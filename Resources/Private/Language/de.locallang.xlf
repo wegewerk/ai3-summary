@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" target-language="de" original="" datatype="plaintext" date="2026-07-29T10:30:03+02:00">
+	<file source-language="en" target-language="de" original="" datatype="plaintext" date="2026-08-07T12:14:03+02:00">
 		<body>
 			<trans-unit id="tx_ai3.summary.error">
 				<source>An Error occured: %s</source>
@@ -25,6 +25,10 @@
 			<trans-unit id="tx_ai3.summary.summary.generating">
 				<source>Generating summary...</source>
 				<target>Zusammenfassung wird erzeugt...</target>
+			</trans-unit>
+			<trans-unit id="tx_ai3.summary.summary.cost">
+				<source>%s credit(s)</source>
+				<target>%s Credits</target>
 			</trans-unit>
 		</body>
 	</file>
