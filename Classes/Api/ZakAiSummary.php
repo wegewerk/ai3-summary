@@ -12,7 +12,7 @@ class ZakAiSummary implements ZakAiEndpointInterface
 {
     public function __construct(private ZakAiClient $client) {}
 
-    public function generate(string $imagePath, string $description, string $language): string
+    public function generate(string $imagePath, string $description, string $language, array $options = []): string
     {
         $response = $this->client->postJson(
             'bulletpoints',
