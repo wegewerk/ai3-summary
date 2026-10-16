@@ -41,10 +41,10 @@ class ArticlesummaryController extends AbstractAjaxController
                 return $this->createJsonErrorResponse(new Response(), [ 'error' => 'No content found on page' ]);
             }
 
-            $summary = $this->articlesummaryCapability->endpoint->generate(
-                '',
-                $content,
-                $parsedBody['language'] ?? 'de');
+            $summary = $this->articlesummaryCapability->endpoint->generate([
+                'text'     => $content,
+                'language' => $parsedBody['language'] ?? 'de',
+            ]);
             if ($summary === null) {
                 return $this->createJsonErrorResponse(new Response(), [ 'error' => 'Error: Suggestion was empty for Page ' . $pageId ]);
             }

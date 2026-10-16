@@ -35,7 +35,9 @@ class SummaryApp {
         this.render();
 
         try {
-            const response = await this.api.getArticlesummary(this.pageId, this.language);
+            const response = await this.api.getArticlesummary(this.pageId, {
+                language: this.language,
+            });
             const result = await response.resolve();
             const data = JSON.parse(result);
 

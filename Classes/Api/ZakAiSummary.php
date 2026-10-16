@@ -2,26 +2,15 @@
 
 namespace Wegewerk\Ai3Summary\Api;
 
-use Wegewerk\Ai3Core\Api\ZakAiClient;
-use Wegewerk\Ai3Core\Api\ZakAiEndpointInterface;
+use Wegewerk\Ai3Core\Api\AbstractZakAiEndpoint;
 
 /**
- * Implemets the API Endpoint related to page summary generation
+ * Implements the API Endpoint related to page summary generation
  */
-class ZakAiSummary implements ZakAiEndpointInterface
+class ZakAiSummary extends AbstractZakAiEndpoint
 {
-    public function __construct(private ZakAiClient $client) {}
-
-    public function generate(string $imagePath, string $description, string $language, array $options = []): string
-    {
-        $response = $this->client->postJson(
-            'bulletpoints',
-            [
-                'text'     => $description,
-                'language' => $language ?? 'de',
-            ]
-        );
-        return $response['bulletpoints'] ?? '';
-    }
-
+    protected string $endpoint = 'bulletpoints';
+    protected string $responseKey = 'bulletpoints';
+    protected array $requiredOptions = ['text'];
+    protected array $optionalOptions = ['language'];
 }

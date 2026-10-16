@@ -46,17 +46,18 @@ ZakAiSummary
 
 .. php:class:: Wegewerk\Ai3Summary\Api\ZakAiSummary
 
-   Implements ``Wegewerk\Ai3Core\Api\ZakAiEndpointInterface``. Wraps
-   ``ZakAiClient`` to call the ZAK-AI ``bulletpoints`` REST endpoint.
+   Extends ``Wegewerk\Ai3Core\Api\AbstractZakAiEndpoint`` (implementing
+   ``ZakAiEndpointInterface``). Wraps ``ZakAiClient`` to call the
+   ZAK-AI ``bulletpoints`` REST endpoint.
 
-   .. php:method:: generate($imagePath, $description, $language)
+   .. php:method:: generate(array $options = [])
 
       Sends page content to the ZAK-AI API and returns the generated
       bullet-point summary string.
 
-      :param string $imagePath: Unused; reserved for future use.
-      :param string $description: The page content text to summarise.
-      :param string $language: The target language for the summary.
+      :param array $options: Associative array of options:
+         * ``text`` (string, required): The page content text to summarise.
+         * ``language`` (string, optional): The target language for the summary (default: 'de').
       :returntype: string
 
 .. _developer-ajax-controller:
