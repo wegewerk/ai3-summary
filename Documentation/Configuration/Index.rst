@@ -14,6 +14,7 @@ Ai3 Core
 Ai3 Summary relies on the configuration of **Ai3 Core**. Ensure that
 :composer:`wegewerk/ai3_core` is properly installed and configured with
 valid API credentials for the ZAK-AI service.
+See https://docs.typo3.org/p/wegewerk/ai3_core/main/en-us/Installation/Index.html
 
 .. _configuration-api-credentials:
 
